@@ -42,14 +42,14 @@ public class TargetRange {
         if (!(o instanceof TargetRange)) return false;
 
         TargetRange that = (TargetRange) o;
-        return  (start == that.start) && (end == that.end);
+        return  (getStart() == that.getStart()) && (getEnd() == that.getEnd());
 
     }
 
     @Override
     public int hashCode() {
-        int result = start;
-        result = 31 * result + end;
+        int result = getStart();
+        result = 31 * result + getEnd();
         return result;
     }
 }
