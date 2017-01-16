@@ -14,8 +14,6 @@ import com.bunk3r.spanez.locators.Word;
 import static com.bunk3r.spanez.SpanEZ.BOLD;
 import static com.bunk3r.spanez.SpanEZ.ITALIC;
 import static com.bunk3r.spanez.SpanEZ.STRIKETHROUGH;
-import static com.bunk3r.spanez.SpanEZ.SUBSCRIPT;
-import static com.bunk3r.spanez.SpanEZ.SUPERSCRIPT;
 import static com.bunk3r.spanez.SpanEZ.UNDERLINE;
 
 public class MainActivity extends AppCompatActivity {
@@ -44,13 +42,18 @@ public class MainActivity extends AppCompatActivity {
               .inclusiveExclusive()
               .style(Word.findAll("ipsum"), BOLD | UNDERLINE)
               .style(Word.findFirst("ipsum"), ITALIC | STRIKETHROUGH)
-              .link(Word.findFirst("ut ultricies dolor molestie eget. Aliquam scelerisque, elit sit amet faucibus tincidunt"), "http://www.google.com")
-              .clickable(Word.findFirst("Mauris in lacus at nulla consectetur dapibus. Sed accumsan sapien nec nisi mattis pulvinar."), new OnSpanClickListener() {
-                  @Override
-                  public void onSpanClick(String spanContent) {
-                      Toast.makeText(MainActivity.this, spanContent, Toast.LENGTH_SHORT).show();
-                  }
-              })
+              .link(Word.findFirst(
+                      "ut ultricies dolor molestie eget. Aliquam scelerisque, elit sit amet faucibus tincidunt"),
+                    "http://www.google.com")
+              .clickable(Word.findFirst(
+                      "Mauris in lacus at nulla consectetur dapibus. Sed accumsan sapien nec nisi mattis pulvinar."),
+                         new OnSpanClickListener() {
+                             @Override
+                             public void onSpanClick(String spanContent) {
+                                 Toast.makeText(MainActivity.this, spanContent, Toast.LENGTH_SHORT)
+                                      .show();
+                             }
+                         })
               .inclusive()
               .quote(Paragraph.containing("Lorem"))
               .scaleX(Range.from(60, 80), 2)
