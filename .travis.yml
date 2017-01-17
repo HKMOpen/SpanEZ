@@ -42,5 +42,5 @@ addons:
       - sonarqube
 
 script:
-  - ./gradlew build test
+  - ./gradlew build test sonarQube
   - sonar-scanner
