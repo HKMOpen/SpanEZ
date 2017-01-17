@@ -28,15 +28,18 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
     - $HOME/.android/build-cache
-    - $HOME/.sonar/cache'
+    - $HOME/.sonar/cache
 
 before_script:
  - chmod +x gradlew
 
 addons:
-  sonarqube: true
-    branches:
-      - sonarqube
+  sonarqube:
+    token:
+      secure: "ElJC5QAK97SbDLhlvGX4ybiuOfP+asUTZl4CsYYv/xTRuFOSflLyK85Cxs/BWnhpLRWicA/ynQA5SVf/IBPUkNNuopliBdruy/LtLr3B4pN4epCedn/CI0otf/LRfE6XhwajkC/Dwpz5ojzlUqyG471a8sQMO7mpBcCc6+gRxjSo6a77xvwtLKlqZv3Y0aK/KnaucQ/IpfLfdaWBAr0ZbReif5HY2w25XmelSuY2yKfJkRFiOS9yc/RCv7b2PhERs27qj80Eri0WGWFSZHGzAVqTH0jQto07lyxQGOE7cXRACYlJWgxb493uryFx0PfQY7w2sFeshyUD/lm58S/yRoDECw5XAFupttL4lfxBaDUQ+O4mtjp7SygHfwm+UjYemPDadb1R+QKvnmfmQI/hx6rYRFcvDLMDT4perhzGqBlHX/P95ZuctTHk47x3+FgpRJgum8MAggu01nNt+bc+YR4jYa8x8AqE9e+P5bCoGkdyMyLR0tvTgG+KramCbgh11ZycKteKwS3782hZC6RLh0sdwe5OQ9GnWCkccC1Jfx3nOhLt4f2YEOb0SBIA69w3wg8/8cetwS1AIN5ICEmVXbHwQYINdjRdr2zVlcpgKN5MZf8zXSLYxIQY8al2nUBcBO+xGbd3dFWEm4wh6VQfEKWAJm6pEidnjwzsYrrb/6I="
+  branches:
+    - master
+    - sonarqube
 
 script:
   - ./gradlew build test
