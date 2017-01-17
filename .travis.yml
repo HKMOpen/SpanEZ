@@ -38,9 +38,8 @@ addons:
     token:
       secure: "xlRgmgzy6yL5q29d5Km1A/00+D+9WE8XGAxQ49fPElVVafFOFX9J4aLUOUmPczbzSQaq0H4Kk9NcAWZ2UUSSioJP8XUNbIhARxbV3P1Z6oXGXsiFboiNB9yRcmWSHvF4igoAqPy7kE1Mdfzu7hr9AcxPaqyV56BStSFF5jZe9qDwcyoGZ3/U9M65H5j1o7LWAzSVIKiudCl0lrEPJDLdTfC5h/ut+OUv3RY3WH4jLFCtNrB+2NtS3xTPdp9Etm6n0Ova6G7+fm0MtooO4TdjnsLOBQVoPmqQFUcW1Egc1qBOd7krG+B/Jd36LNmhO+6zqJL5wnGkSowifKiVeuT7ztI/zEtpQeCXmnXZ5HxI1VHEj4zOijd1x8glLPy9mfjVl593ZwGCoJgabDFhRlCgl7y9SIeYLZv6qlyhQLrpXjQsCWOUX1LaeXQmSXFrvHczV5be6rMGicpKEvGrRorVPO0DakE+hjoi8MaVfmcXzt5ygyjy+Rqe7mHROXx7ib4vm1I8Ldvwkrb76KE1pDaLRI/3VQXsY8v5T0822g+HwIczqvIAAO4nRBM0WEeWTvVwOtdFwa1Mp5JnM/2VLiSzicWiVzqzA0br2UwFR2mzN1KV3mXPlJmAFtodL36t6lVTEsDXIP/UK0K7MiCmvkx5urKXoWhONbFMetRgBqElOJE="
   branches:
-      - master
       - sonarqube
 
 script:
-  - ./gradlew build test sonarQube
+  - ./gradlew build test
   - sonar-scanner
