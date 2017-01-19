@@ -38,7 +38,8 @@ env:
 
 addons:
   sonarqube: true
-  branches: sonarqube
+    branches:
+      - sonarqube
 
 before_script:
  - chmod +x gradlew
@@ -47,4 +48,4 @@ script:
   - ./gradlew build test
 
 after_success:
-  - sonar-scanner
+  - sonar-scanner -Dsonar.login=$SONAR_TOKEN
