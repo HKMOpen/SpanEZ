@@ -10,15 +10,6 @@ android:
     - platform-tools
     - extra-android-m2repository
 
-#
-#before_script:
-#  # Create and start emulator
-#  - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
-#  - emulator -avd test -no-skin -no-audio -no-window &
-#  - android-wait-for-emulator
-#  - adb shell input keyevent 82 &
-#
-
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -37,7 +28,7 @@ env:
   - secure: tZt10m2kLImdwEWxRVKrHBE/6cVV2nOh737bc+HwBnATw7QDe+esYsHcNGWHhfAfHpyolkvdkPnoNp+mow9j7hgGIaOqpru7P5lf+5lu1Rf/rqDmaB+W8xjNA7x88g0EOihauy7IZ7Q/5gfbMlO2kYUvxqrOdOp0x/SbuAPH1AjW9B0ZC0fNxcsI3ENn+jJF80MKnEWJC12Bpp2+wjDqSVGqOtAqz1u04If15+TvIlnSGc5CNw2MyALyzXfz/qG/y1HpIdWEPSZLqT+907ZhnlEshNec7lMh2DlwHuUUcsCLAE7emfWBRdifaVAtOqrD5d7QEsJzpk8tOddbt5JfrBplic4KCQ7y4qcS9rBtdX30BpS/Oeb44RdRh87og126iLsJ2ROYR3+eItIV1d/ndkJJ007Z0oVF0jSc6iaiLOP8gjcqkQ+pdlAUu9uQr7NPma+MvMDco+A2gJymUSIefl0S8Pkx+RPmBs5Usf+Gzp3T7ieXbxdOTUJfpx+jbkU4/wNOx939UtkbhzMM3ulkEzjUhmV9vBto98WkF3MCEDH0UY2tHSadTqFS5OnCECembjGL/0AnqpfodTkxEkTBAPTkVakbqUpdta89MFmOXk0Qc/jY1bFAsxkRKeT5BbiQORmUInVxHu7NFkc+pN/ZkZN32T+4Tnh+XDS4jixl/iE=
 
 addons:
-  sonarqube: true
+  sonarqube:
     branches:
       - sonarqube
 
