@@ -48,4 +48,4 @@ script:
   - ./gradlew build test
 
 after_success:
-  - sonar-scanner -Dsonar.login=$SONAR_TOKEN
+  - sonar-scanner
